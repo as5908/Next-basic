@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -108,7 +108,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "E:\\workspace\\react-colt\\next\\first-next\\pages\\post.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -124,50 +123,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // );
 // export default withRouter(Post);
 
-const Post = ({
-  comments,
-  id
-}) => {
-  return __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 5
-    }
-  }, __jsx("h1", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, "You are looking at Post#", id), __jsx("ul", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }, comments.map(comment => __jsx("li", {
-    key: comment.id,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 11
-    }
+const Post = props => {
+  // console.log('[Post]', props);
+  const {
+    comments,
+    id
+  } = props;
+  return __jsx("div", null, __jsx("h1", null, "You are looking at Post#", id), __jsx("ul", null, comments.map(comment => __jsx("li", {
+    key: comment.id
   }, comment.body))));
 }; // 1 way is this other is using withRouter
 
 
-Post.getInitialProps = async ({
-  query
-}) => {
+Post.getInitialProps = async context => {
+  // console.log('[Post.getInitialProps]', context);
+  const {
+    query
+  } = context;
   const {
     data
-  } = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`https://jsonplaceholder.typicode.com/comments?postId=${query.id}`);
-  console.log(data);
+  } = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`https://jsonplaceholder.typicode.com/comments?postId=${1}`); //console.log(data);
+
   return _objectSpread({
     comments: data
   }, query);
@@ -177,7 +153,7 @@ Post.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/post.js ***!
   \*****************************/

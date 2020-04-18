@@ -5020,10 +5020,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 
 
-
-var _this = undefined,
-    _jsxFileName = "E:\\workspace\\react-colt\\next\\first-next\\pages\\post.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -5037,64 +5033,38 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 // );
 // export default withRouter(Post);
 
-var Post = function Post(_ref) {
-  var comments = _ref.comments,
-      id = _ref.id;
-  return __jsx("div", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 5
-    }
-  }, __jsx("h1", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, "You are looking at Post#", id), __jsx("ul", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }, comments.map(function (comment) {
+var Post = function Post(props) {
+  // console.log('[Post]', props);
+  var comments = props.comments,
+      id = props.id;
+  return __jsx("div", null, __jsx("h1", null, "You are looking at Post#", id), __jsx("ul", null, comments.map(function (comment) {
     return __jsx("li", {
-      key: comment.id,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 11
-      }
+      key: comment.id
     }, comment.body);
   })));
 }; // 1 way is this other is using withRouter
 
 
-Post.getInitialProps = function _callee(_ref2) {
+Post.getInitialProps = function _callee(context) {
   var query, _await$axios$get, data;
 
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          query = _ref2.query;
+          // console.log('[Post.getInitialProps]', context);
+          query = context.query;
           _context.next = 3;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://jsonplaceholder.typicode.com/comments?postId=".concat(query.id)));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://jsonplaceholder.typicode.com/comments?postId=".concat(1)));
 
         case 3:
           _await$axios$get = _context.sent;
           data = _await$axios$get.data;
-          console.log(data);
           return _context.abrupt("return", _objectSpread({
             comments: data
           }, query));
 
-        case 7:
+        case 6:
         case "end":
           return _context.stop();
       }
@@ -5106,7 +5076,7 @@ Post.getInitialProps = function _callee(_ref2) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 2:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpost&absolutePagePath=E%3A%5Cworkspace%5Creact-colt%5Cnext%5Cfirst-next%5Cpages%5Cpost.js ***!
   \****************************************************************************************************************************************/
@@ -5129,5 +5099,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=post.js.map

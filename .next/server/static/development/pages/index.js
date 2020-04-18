@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1783,7 +1783,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "E:\\workspace\\react-colt\\next\\first-next\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1796,59 +1795,19 @@ const Index = ({
   //   console.log('Fetching your data in useEffect!!'); // happens on client side, mounting only happens in DOM i.e client side
   // });
 
-  return __jsx("div", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 5
-    }
-  }, __jsx("h1", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, "Our Index Page"), __jsx("ul", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }, posts.map(post => __jsx("li", {
-    key: post.id,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 11
-    }
+  return __jsx("div", null, __jsx("h1", null, "Our Index Page"), __jsx("ul", null, posts.map(post => __jsx("li", {
+    key: post.id
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: `/post?id=${post.id}`,
-    as: `/p/${post.id}`,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 13
-    }
-  }, __jsx("a", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 15
-    }
-  }, post.title))))));
+    as: `/p/${post.id}`
+  }, __jsx("a", null, post.title))))));
 };
 
 Index.getInitialProps = async () => {
   const {
     data
   } = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://jsonplaceholder.typicode.com/posts');
-  console.log(data[0]);
+  console.log('Fetch');
   return {
     posts: data,
     mood: 'HAPPY'
@@ -1859,7 +1818,7 @@ Index.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

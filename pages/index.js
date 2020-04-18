@@ -27,7 +27,7 @@ Index.getInitialProps = async () => {
   const { data } = await axios.get(
     'https://jsonplaceholder.typicode.com/posts'
   );
-  console.log(data[0]);
+  console.log('Fetch');
   return { posts: data, mood: 'HAPPY' };
 };
 

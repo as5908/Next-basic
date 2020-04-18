@@ -6305,10 +6305,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 
-
-var _this = undefined,
-    _jsxFileName = "E:\\workspace\\react-colt\\next\\first-next\\pages\\index.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -6320,53 +6316,13 @@ var Index = function Index(_ref) {
   //   console.log('Fetching your data in useEffect!!'); // happens on client side, mounting only happens in DOM i.e client side
   // });
 
-  return __jsx("div", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 5
-    }
-  }, __jsx("h1", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, "Our Index Page"), __jsx("ul", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 7
-    }
-  }, posts.map(function (post) {
+  return __jsx("div", null, __jsx("h1", null, "Our Index Page"), __jsx("ul", null, posts.map(function (post) {
     return __jsx("li", {
-      key: post.id,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 11
-      }
+      key: post.id
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       href: "/post?id=".concat(post.id),
-      as: "/p/".concat(post.id),
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16,
-        columnNumber: 13
-      }
-    }, __jsx("a", {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17,
-        columnNumber: 15
-      }
-    }, post.title)));
+      as: "/p/".concat(post.id)
+    }, __jsx("a", null, post.title)));
   })));
 };
 
@@ -6383,7 +6339,7 @@ Index.getInitialProps = function _callee() {
         case 2:
           _await$axios$get = _context.sent;
           data = _await$axios$get.data;
-          console.log(data[0]);
+          console.log('Fetch');
           return _context.abrupt("return", {
             posts: data,
             mood: 'HAPPY'
@@ -6401,7 +6357,7 @@ Index.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5Cworkspace%5Creact-colt%5Cnext%5Cfirst-next%5Cpages%5Cindex.js ***!
   \*************************************************************************************************************************************/
@@ -6424,5 +6380,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

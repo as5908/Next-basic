@@ -6,7 +6,9 @@ import axios from 'axios';
 //   <h1>You are looking at Post# {router.query.id}</h1>
 // );
 // export default withRouter(Post);
-const Post = ({ comments, id }) => {
+const Post = (props) => {
+  // console.log('[Post]', props);
+  const { comments, id } = props;
   return (
     <div>
       <h1>You are looking at Post#{id}</h1>
@@ -20,11 +22,13 @@ const Post = ({ comments, id }) => {
 };
 
 // 1 way is this other is using withRouter
-Post.getInitialProps = async ({ query }) => {
+Post.getInitialProps = async (context) => {
+  // console.log('[Post.getInitialProps]', context);
+  const { query } = context;
   const { data } = await axios.get(
-    `https://jsonplaceholder.typicode.com/comments?postId=${query.id}`
+    `https://jsonplaceholder.typicode.com/comments?postId=${1}`
   );
-  console.log(data);
+  //console.log(data);
   return { comments: data, ...query };
 };
 
